@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Vignesh</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">Vignesh</a>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <h1>Contact Me</h1>
+      <p>Have a project or opportunity? Send a message below.</p>
+    </section>
+
+    <section class="contact container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form card">
+          <h2>Send a message</h2>
+          <form action="#" method="post" novalidate>
+            <label for="fullname">Full Name</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Your full name" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210">
+
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required>
+              I agree to the terms and privacy policy.
+            </label>
+
+            <button type="submit" class="btn primary">Submit</button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Socials -->
+        <aside class="contact-info card" aria-label="Contact information">
+          <h2>Contact Info</h2>
+          <address>
+            <p>Email: <a href="mailto:vigneshbala6381@gmail.com">vigneshbala6381@gmail.com</a></p>
+            <p>Phone: <a href="tel:+916381098422">+91 6381098422</a></p>
+            <p>Location: Chennai, India</p>
+          </address>
+
+          <div class="socials">
+            <h3>Find me on</h3>
+            <ul>
+              <li><a href="https://github.com/vignesh6381" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/vignesh-b-030128276" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Vignesh</strong>
+        <p class="muted">Full-Stack Developer</p>
+      </div>
+
+      <nav aria-label="Footer links">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="socials">
+        <a href="https://github.com/vignesh6381" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/vignesh-b-030128276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>&copy; 2025 Vignesh. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Simple nav toggle for small screens
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

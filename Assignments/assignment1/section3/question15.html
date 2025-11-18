@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Positioning Boxes Demo</title>
+  <style>
+    :root {
+      --size: 150px;
+      --gap: 20px;
+    }
+
+    body {
+      margin: 0;
+     
+      padding: 24px;
+    }
+
+    .parent {
+      width: 520px;
+      height: 420px;
+      border: 2px solid #ddd;
+      padding: 16px;
+      position: relative; 
+      box-sizing: border-box;
+      margin-bottom: 800px; 
+    }
+
+    .boxes-row {
+      display: flex;
+      gap: var(--gap);
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: var(--size);
+      height: var(--size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 6px;
+    }
+
+    .box.static {
+      background: #6c5ce7;
+    }
+
+    .box.relative {
+      background: #00b894;
+      position: relative;
+      top: 20px;   
+      left: 20px;  
+    }
+
+    .box.absolute {
+      background: #fdcb6e;
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      right: 16px;   
+      bottom: 16px;  
+      color: #111;
+    }
+
+    .box.fixed {
+      background: #d63031;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      margin: 12px; 
+      width: var(--size);
+      height: var(--size);
+      z-index: 9999;
+    }
+
+    .label { font-size: 13px; opacity: 0.95; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <div class="parent" aria-label="positioning parent">
+    <div class="boxes-row">
+      <div class="box static"><span class="label">Static</span></div>
+
+      <div class="box relative"><span class="label">Relative<br>+20px</span></div>
+    </div>
+
+    <div class="box absolute"><span class="label">Absolute<br>bottom-right</span></div>
+  </div>
+
+  <div class="box fixed"><span class="label">Fixed<br>bottom-left</span></div>
+
+  <div style="max-width:700px; line-height:1.6;">
+    <h2>Scroll to see the fixed box stay visible</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ratione.</p>
+    <p style="margin-top:12px;">(Additional paragraphs to create scrollable content)</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, ipsum id tincidunt aliquam, orci arcu venenatis sapien, non venenatis lorem augue vitae ligula.</p>
+    <p>Praesent at quam nec ipsum pretium gravida. Integer vel faucibus lectus. Cras vitae dictum arcu. Sed nec turpis sit amet nulla tristique consequat.</p>
+    <p>Morbi et lorem ac odio rhoncus efficitur. Maecenas in purus vitae leo aliquet dictum. Suspendisse potenti. Donec pharetra, ipsum eget feugiat tristique, mi arcu placerat arcu, sed rhoncus lorem neque id augue.</p>
+    <p>Vivamus gravida, odio sit amet volutpat fermentum, velit lorem varius nisl, non malesuada lorem nunc vitae arcu. Donec non ex a nisl volutpat luctus.</p>
+    <p>End of demo content.</p>
+  </div>
+
+</body>
+</html>

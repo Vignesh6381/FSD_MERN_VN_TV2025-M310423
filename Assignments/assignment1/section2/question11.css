@@ -1,0 +1,14 @@
+/* External CSS file */
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+}
+
+.external-box {
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #4a90e2;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}

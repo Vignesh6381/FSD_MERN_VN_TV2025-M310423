@@ -1,0 +1,59 @@
+<div class="gallery">
+    <a href="https://en.wikipedia.org/wiki/Mountain" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 1">
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Ocean" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 2">
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Forest" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 3">
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Desert" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 4">
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Space" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 5">
+    </a>
+    <a href="https://en.wikipedia.org/wiki/River" target="_blank">
+        <img src="https://via.placeholder.com/200" alt="Image 6">
+    </a>
+</div>
+
+<style>
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .gallery a {
+        width: 30%;                 
+        display: flex;
+        justify-content: center;     
+        align-items: center;         
+        background: #f4f4f4;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    
+    @media (max-width: 768px) {
+        .gallery a {
+            width: 45%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery a {
+            width: 90%;
+        }
+    }
+</style>

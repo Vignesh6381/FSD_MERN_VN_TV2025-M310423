@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fixed vs Sticky Sidebar</title>
+  <style>
+    :root {
+      --sidebar-width: 200px;
+      --gap: 20px;
+      --bg: #f7f8fb;
+      --card: #fff;
+      --muted: #666;
+    }
+
+    body {
+      margin: 0;
+      
+      background: var(--bg);
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .demo {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .example {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      margin-bottom: 28px;
+    }
+
+    .example h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    
+    .fixed-layout {
+      position: relative;
+      min-height: 360px;
+    }
+
+    .fixed-layout aside {
+      position: fixed;       
+      left: 16px;
+      top: 96px;             
+      width: var(--sidebar-width);
+      background: #ffffff;
+      border: 1px dashed #cfcfcf;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .fixed-layout main {
+      margin-left: calc(var(--sidebar-width) + 32px); 
+      padding: 8px 12px;
+    }
+
+    
+    .sticky-layout {
+      display: flex;
+      gap: var(--gap);
+      align-items: flex-start;
+    }
+
+    .sticky-layout aside {
+      width: var(--sidebar-width);
+      position: sticky;      
+      top: 16px;            
+      height: fit-content;
+      background: #ffffff;
+      border: 1px dashed #cfcfcf;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      flex-shrink: 0;
+    }
+
+    .sticky-layout main {
+      flex: 1;
+      padding: 8px 12px;
+      min-height: 320px;
+    }
+
+   
+    
+
+ 
+  </style>
+</head>
+<body>
+  <div class="demo">
+
+    <div class="example fixed-layout" aria-labelledby="fixed-title">
+      <h2 id="fixed-title">Fixed Sidebar    </h2>
+
+      <aside aria-label="Fixed sidebar">
+        <nav>
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">Getting Started</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">service</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="content">
+          <p class="block">In this example the sidebar uses position: fixed. It is removed from the normal page flow and stays fixed relative to the viewport. The main area must offset itself (here via <code>margin-left</code>) so it doesn't sit underneath the fixed sidebar.</p>
+
+          
+          <div class="long">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nunc a mi gravida tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc condimentum, libero id cursus hendrerit, orci mauris dictum nibh, a bibendum metus lorem at arcu.</p>
+            <p>Curabitur sit amet sem id arcu dapibus convallis. Suspendisse potenti. Vivamus in tortor eu purus tristique volutpat. Phasellus porta, augue a facilisis luctus, nisl urna feugiat lacus, eu tincidunt mi odio eu erat.</p>
+            <p>Sed non ex id sapien lacinia luctus. Aliquam erat volutpat. Etiam ut arcu nec justo ultrices tincidunt. Cras posuere, elit quis pretium vulputate, ex augue viverra lorem, at pulvinar sem risus sed lorem.</p>
+            <p> (more paragraphs to scroll) </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="example sticky-layout" aria-labelledby="sticky-title">
+      <h2 id="sticky-title">Sticky Sidebar</h2>
+
+      <aside aria-label="Sticky sidebar">
+        <nav>
+          <ul>
+            <li><a href="#">Introduction</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Examples</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="content">
+          <p class="block">Here the sidebar uses position: sticky with top: 16px. The aside stays in the normal document flow but will "stick" to the top of the viewport once the user scrolls past it — until its parent container's boundary is reached.</p>
+
+          
+          <div class="long">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nunc a mi gravida tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc condimentum, libero id cursus hendrerit, orci mauris dictum nibh, a bibendum metus lorem at arcu.</p>
+            <p>Curabitur sit amet sem id arcu dapibus convallis. Suspendisse potenti. Vivamus in tortor eu purus tristique volutpat. Phasellus porta, augue a facilisis luctus, nisl urna feugiat lacus, eu tincidunt mi odio eu erat.</p>
+            <p>Sed non ex id sapien lacinia luctus. Aliquam erat volutpat. Etiam ut arcu nec justo ultrices tincidunt. Cras posuere, elit quis pretium vulputate, ex augue viverra lorem, at pulvinar sem risus sed lorem.</p>
+            <p>Nullam non ligula ut purus tincidunt sollicitudin. Aenean vel ipsum at erat gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>... (more paragraphs to scroll) ...</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>

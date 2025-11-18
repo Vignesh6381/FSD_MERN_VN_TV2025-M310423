@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Grid Layout</title>
+  <style>
+    :root{
+      --gap: 16px;
+      --sidebar-width: 1fr;
+      --main-width: 2fr;
+      --widget-width: 1fr;
+      --header-height: 64px;
+      --footer-height: 48px;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --muted: #58606a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--bg);
+      color:#111;
+      line-height:1.4;
+      padding:var(--gap);
+    }
+
+    .dashboard {
+      display: grid;
+      gap: var(--gap);
+      min-height: calc(100vh - (var(--gap) * 2));
+      /* 3 columns: sidebar 1/4, main 2/4, widget 1/4 */
+      grid-template-columns: var(--sidebar-width) var(--main-width) var(--widget-width);
+      /* 3 rows: header, content, footer */
+      grid-template-rows: var(--header-height) 1fr var(--footer-height);
+      grid-template-areas:
+        "header header header"
+        "sidebar main widgets"
+        "footer footer footer";
+    }
+
+    header.site-header {
+      grid-area: header;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(16,24,40,0.06);
+    }
+
+    aside.sidebar {
+      grid-area: sidebar;
+      background: var(--card);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(16,24,40,0.04);
+    }
+
+    main.main {
+      grid-area: main;
+      background: var(--card);
+      padding: 18px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(16,24,40,0.04);
+      overflow:auto;
+    }
+
+    aside.widgets {
+      grid-area: widgets;
+      background: var(--card);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(16,24,40,0.04);
+    }
+
+    footer.site-footer {
+      grid-area: footer;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* small utilities for demo content */
+    .brand { font-weight:700; letter-spacing:0.2px; }
+    .nav { display:flex; gap:12px; align-items:center; }
+    .card { background:#fcfdff; padding:12px; border-radius:6px; margin-bottom:12px; border:1px solid rgba(16,24,40,0.03); }
+    .sidebar nav ul { list-style:none; padding:0; margin:0; }
+    .sidebar nav li { margin:8px 0; }
+    .widgets .widget { margin-bottom:12px; }
+    @media (max-width:900px){
+      .dashboard{
+        grid-template-columns: 1fr;
+        grid-template-rows: var(--header-height) auto auto var(--footer-height);
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+      }
+      aside.widgets { order:3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard" role="application" aria-label="Dashboard layout">
+    <header class="site-header">
+      <div class="brand">Acme Admin</div>
+      <nav class="nav" aria-label="Top navigation">
+        <a href="#" aria-current="page">Dashboard</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="card">
+        <strong>Navigation</strong>
+      </div>
+      <nav aria-label="Sidebar menu">
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Team</a></li>
+        </ul>
+      </nav>
+
+      <div class="card" style="margin-top:12px;">
+        <strong>Quick Actions</strong>
+        <div style="margin-top:8px;">
+          <button>New Report</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main" role="main">
+      <section class="card">
+        <h2>Overview</h2>
+        <p>Summary metrics and charts would go here.</p>
+      </section>
+
+      <section class="card">
+        <h3>Recent Activity</h3>
+        <p>List of recent user or system activities.</p>
+      </section>
+
+      <section class="card">
+        <h3>Projects</h3>
+        <p>Project cards or a data table could be placed here.</p>
+      </section>
+    </main>
+
+    <aside class="widgets" aria-label="Widget panel">
+      <div class="widget card">
+        <h4>Widget A</h4>
+        <p>Small metric</p>
+      </div>
+
+      <div class="widget card">
+        <h4>Widget B</h4>
+        <p>Another metric</p>
+      </div>
+
+      <div class="widget card">
+        <h4>Widget C</h4>
+        <p>Alerts / notifications</p>
+      </div>
+    </aside>
+
+    <footer class="site-footer" role="contentinfo">
+      &copy; 2025 Acme Admin — All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

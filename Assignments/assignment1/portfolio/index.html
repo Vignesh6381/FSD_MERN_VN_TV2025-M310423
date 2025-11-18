@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vignesh B — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">Vignesh</a>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Hi, I'm Vignesh B</h1>
+          <p class="tagline">Full-Stack Developer • Building accessible, responsive web experiences</p>
+          <p class="cta-row">
+            <a href="projects.html" class="btn primary">View Projects</a>
+            <a href="contact.html" class="btn outline">Contact Me</a>
+          </p>
+        </div>
+
+        <div class="hero-media" aria-hidden="false">
+          <div class="photo-wrap" role="img" aria-label="Photo of Treema">
+            <img src="../images/image1.jpg" alt="Your photo">
+            <span class="photo-badge">3+ Projects</span> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about container">
+      <h2>About Me</h2>
+      <p>I'm a fresher full-stack developer passionate about building clean, responsive user interfaces and robust backends. I enjoy learning new technologies and applying good software engineering practices to real problems.</p>
+    </section>
+
+    <section class="skills container" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul class="skill-list">
+        <li class="skill-card">
+          <h3>Frontend</h3>
+          <p>HTML, CSS, JavaScript, React</p>
+        </li>
+        <li class="skill-card">
+          <h3>Backend</h3>
+          <p>Node.js, Express, MongoDB</p>
+        </li>
+        <li class="skill-card">
+          <h3>Tools</h3>
+          <p>Git, Docker, CI/CD</p>
+        </li>
+        <li class="skill-card">
+          <h3>Design</h3>
+          <p>Responsive UI, Accessibility</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="education container">
+      <h2>Education & Experience</h2>
+
+      <table class="info-table" aria-describedby="edu-desc">
+        <caption id="edu-desc" class="visually-hidden">Education and Experience details</caption>
+        <thead>
+          <tr>
+            <th>Institution / Role</th>
+            <th>Type</th>
+            <th>Period</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SA Engineering College</td>
+            <td>B.E. ECE</td>
+            <td>2021 — 2025</td>
+            <td>Graduated with practical projects in web development</td>
+          </tr>
+          <tr>
+            <td>Full Stack Course</td>
+            <td>Java Full Stack by Wipro</td>
+            <td>2025</td>
+            <td>React, Node, DevOps basics</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="cta container">
+      <h2>Like what you see?</h2>
+      <p>Check my projects or get in touch for collaboration.</p>
+      <a href="contact.html" class="btn primary">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Vignesh</strong>
+        <p class="muted">Full-Stack Developer</p>
+      </div>
+
+      <nav aria-label="Footer links">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="socials">
+        <a href="https://github.com/vignesh6381" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/vignesh-b-030128276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>&copy; 2025 Vignesh. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <a href="#top" class="fixed-top" title="Back to top">↑</a>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

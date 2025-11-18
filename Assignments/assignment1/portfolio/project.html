@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Treema</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">Vignesh</a>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-hero container">
+      <h1>Projects</h1>
+      <!-- <p>Below are some of my projects — click any card to read more (links open in a new tab).</p> -->
+    </section>
+
+    <section class="projects-grid container" aria-label="Projects gallery">
+      <article class="project-card" tabindex="0">
+
+        <div class="project-body">
+          <h3>Authentication System with Firebase (React + OTP)</h3>
+          <p> Built a secure OTP-based authentication system using React and Firebase Authentication.
+            • Designed a responsive UI and deployed using GitHub Pages.</p>
+          <ul class="tech-list">
+            <li>React</li>
+            <li>CSS Grid</li>
+            <li>Github</li>
+          </ul>
+          
+        </div>
+        <span class="card-tag">Web App</span>
+      </article>
+
+      <article class="project-card" tabindex="0">
+        <div class="project-body">
+          <h3>Recipe Explorer</h3>
+          <p>RESTful API with authentication, CRUD operations and deployment scripts.</p>
+          <ul class="tech-list">
+            <li>Mock API</li>
+            <li>react</li>
+            <li>bootstrap</li>
+          </ul>
+          
+        </div>
+        <span class="card-tag">API</span>
+      </article>
+
+      <article class="project-card" tabindex="0">
+        <div class="project-body">
+          <h3> Razorpay Payment Gateway Integration</h3>
+          <p> Built a food ordering web application where users can browse menu items and securely complete payments
+ via Razorpay Payment Gateway.</p>
+          <ul class="tech-list">
+            <li>react</li>
+            <li> razorpay</li>
+            <li>javascript</li>
+          </ul>
+          
+        </div>
+        <span class="card-tag">payment</span>
+      </article>
+
+
+
+
+
+
+    </section>
+
+    <section class="projects-table container">
+      <h2>Projects List</h2>
+      <table class="projects-list">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Category</th>
+            <th>Technologies</th>
+            <th>Completion Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Authentication System with Firebase (React + OTP)</td>
+            <td>Web App</td>
+            <td>React, CSS Grid, javascript</td>
+            <td>2025-05-10</td>
+          </tr>
+          <tr>
+            <td>Recipe Explorer</td>
+            <td>API</td>
+            <td>React.js, API, bootstrap</td>
+            <td>2025-06-02</td>
+          </tr>
+          <tr>
+            <td>Razorpay Payment Gateway Integration</td>
+            <td>Payment</td>
+            <td>react js,javascript,razorpayment</td>
+            <td>2025-06-20</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Vignesh</strong>
+        <p class="muted">Portfolio</p>
+      </div>
+
+      <nav aria-label="Footer links">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="socials">
+        <a href="https://github.com/vignesh6381" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/vignesh-b-030128276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>&copy; 2025 Vignesh. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+
+</html>

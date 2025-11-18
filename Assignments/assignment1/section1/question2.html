@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f3f3;
+        }
+        .actions button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .edit {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+        }
+        .delete {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">Product List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Wireless Mouse</td>
+                <td>Electronics</td>
+                <td>1500</td>
+                <td>In Stock</td>
+                <td class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Running Shoes</td>
+                <td>Sports</td>
+                <td>1000</td>
+                <td>Out of Stock</td>
+                <td class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Coffee Maker</td>
+                <td>Home Appliances</td>
+                <td>700</td>
+                <td>In Stock</td>
+                <td class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Office Chair</td>
+                <td>Furniture</td>
+                <td>3000</td>
+                <td>Low Stock</td>
+                <td class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Bluetooth Speaker</td>
+                <td>Electronics</td>
+                <td>2000</td>
+                <td>In Stock</td>
+                <td class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

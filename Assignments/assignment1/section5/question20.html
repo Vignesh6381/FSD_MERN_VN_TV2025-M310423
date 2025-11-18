@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Card Grid</title>
+  <style>
+    :root{
+      --gap: 20px;
+      --card-bg: #ffffff;
+      --page-bg: #f5f7fb;
+      --card-radius: 10px;
+      --card-shadow: 0 6px 18px rgba(16,24,40,0.06);
+      --accent: #0b74de;
+    }
+
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: var(--page-bg);
+      padding: 32px;
+      color: #111;
+    }
+
+    .grid {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(1, 1fr); 
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .card h3 { margin: 0; font-size: 1.05rem; }
+    .card p { margin: 0; color: #555; font-size: 0.95rem; flex: 1; }
+    .card a.button {
+      align-self: start;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 480px) and (max-width: 767.98px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199.98px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 1200px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid" aria-label="Cards grid">
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 1 image">
+      <div class="card-body">
+        <h3>Card Title 1</h3>
+        <p>Short description for card one. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 2 image">
+      <div class="card-body">
+        <h3>Card Title 2</h3>
+        <p>Short description for card two. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 3 image">
+      <div class="card-body">
+        <h3>Card Title 3</h3>
+        <p>Short description for card three. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 4 image">
+      <div class="card-body">
+        <h3>Card Title 4</h3>
+        <p>Short description for card four. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 5 image">
+      <div class="card-body">
+        <h3>Card Title 5</h3>
+        <p>Short description for card five. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="../images/image2.jpeg" alt="Card 6 image">
+      <div class="card-body">
+        <h3>Card Title 6</h3>
+        <p>Short description for card six. Summarizes content and purpose.</p>
+        <a class="button" href="#">View</a>
+      </div>
+    </article>
+  </div>
+
+</body>
+</html>
